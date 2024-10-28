@@ -1,0 +1,15 @@
+
+
+<!-- Static HTML code in index.html -->
+<h1>Markdown Blog</h1>
+<ul>
+{% for post in posts %}
+<li>
+<a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a>
+<p>{{ post.author }} - {{ post.date }}</p>
+</li>
+{% endfor %}
+</ul>
+<a href="{{ url_for('new_post') }}">New Post</a>
+
+
